@@ -10,14 +10,12 @@
 :root{
   --bg0:#07090f;--bg1:#0c1018;--bg2:#101520;--bg3:#141c2c;--bg4:#1a2438;
   --gold:#d4a843;--gold2:#a07828;--red:#c03535;--green:#2e8a58;
-  --blue:#2a6db5;--purple:#6b4fa0;--orange:#c46020;--cyan:#1e8888;
+  --blue:#2a6db5;--purple:#6b4fa0;--orange:#c46020;
   --t1:#dde2ef;--t2:#7a88a8;--t3:#3a4560;
   --border:#171e30;--border2:#222f48;
 }
 body{font-family:"Inter",sans-serif;background:var(--bg0);color:var(--t1);min-height:100vh}
 .app{padding:14px}
-
-/* HEADER */
 .hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;flex-wrap:wrap}
 .logo-row{display:flex;align-items:center;gap:10px}
 .logo{width:32px;height:32px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
@@ -28,81 +26,70 @@ body{font-family:"Inter",sans-serif;background:var(--bg0);color:var(--t1);min-he
 .btn-gold:hover{background:var(--gold2)}
 .btn-ghost{padding:7px 10px;border:1px solid var(--border2);border-radius:6px;background:transparent;color:var(--t2);font-size:12px;cursor:pointer;transition:.12s}
 .btn-ghost:hover{background:var(--bg3);color:var(--t1)}
-
-/* STATS */
 .stats-row{display:flex;gap:7px;margin-bottom:11px;flex-wrap:wrap}
 .sc{padding:4px 9px;border-radius:5px;background:var(--bg2);border:1px solid var(--border);font-family:"Rajdhani",sans-serif;font-size:11px;font-weight:600;color:var(--t2)}
 .sc b{color:var(--gold)}
 .sc.danger b{color:var(--red)}
-
-/* GRID — flex wrap, 5 per row then next row */
 .cols-grid{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start}
-
-/* CARD */
 .card{width:256px;flex-shrink:0;border:1px solid var(--border);border-radius:10px;background:var(--bg1);transition:border-color .2s}
 .card:hover{border-color:var(--border2)}
 .card-hdr{padding:8px 10px;background:var(--bg2);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;border-radius:10px 10px 0 0}
 .team-ico{width:26px;height:26px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:12px;font-family:"Rajdhani",sans-serif;font-weight:700;flex-shrink:0}
 .name-inp{flex:1;background:transparent;border:none;outline:none;font-family:"Rajdhani",sans-serif;font-weight:700;font-size:13px;color:var(--t1);min-width:0}
 .stars{display:flex;gap:2px}
-.star{font-size:12px;cursor:pointer;color:var(--bg4);line-height:1}
+.star{font-size:12px;cursor:pointer;color:var(--bg4);line-height:1;user-select:none}
 .star.on{color:var(--gold)}
 .del-btn{width:20px;height:20px;border:none;background:transparent;color:var(--t3);cursor:pointer;font-size:12px;border-radius:3px;display:flex;align-items:center;justify-content:center}
 .del-btn:hover{background:#2d1010;color:var(--red)}
-
 .body{padding:9px 10px;display:flex;flex-direction:column;gap:8px}
 .slabel{font-family:"Rajdhani",sans-serif;font-size:9px;font-weight:700;color:var(--t3);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:4px}
-.div{height:1px;background:var(--border);margin:1px 0}
-
-/* ===== 5 LANE SLOTS ===== */
+.divider{height:1px;background:var(--border);margin:1px 0}
+/* LANES */
 .lanes{display:flex;flex-direction:column;gap:4px}
-.lane-row{display:flex;align-items:center;gap:5px;padding:4px 6px;border-radius:7px;background:var(--bg2);border:1px solid var(--border)}
-.lane-label{font-family:"Rajdhani",sans-serif;font-size:9px;font-weight:700;letter-spacing:.8px;width:28px;text-align:center;flex-shrink:0;padding:2px 0;border-radius:3px;cursor:default}
+.lane-row{border-radius:7px;background:var(--bg2);border:1px solid var(--border);overflow:hidden}
+.lane-hdr{display:flex;align-items:center;gap:5px;padding:3px 6px}
+.lane-lbl{font-family:"Rajdhani",sans-serif;font-size:9px;font-weight:700;letter-spacing:.8px;width:30px;text-align:center;padding:2px 0;border-radius:3px;flex-shrink:0}
 .ll-DSL{background:#1e0d28;color:#c090f0;border:1px solid #4a2070}
 .ll-JUG{background:#280d0d;color:#e07070;border:1px solid #701010}
 .ll-MID{background:#0a1828;color:#70a0e0;border:1px solid #1a3a70}
 .ll-ADC{background:#1e1208;color:#d09050;border:1px solid #704010}
 .ll-SUP{background:#0a1a14;color:#60c090;border:1px solid #105a30}
-
-/* hero slot inside lane */
-.hero-slot{display:flex;align-items:center;gap:4px;flex:1;min-width:0}
-.hero-av{width:30px;height:30px;border-radius:5px;object-fit:cover;flex-shrink:0;border:1px solid var(--border2);cursor:pointer;transition:border-color .15s}
-.hero-av:hover{border-color:var(--gold)}
-.hero-av-empty{width:30px;height:30px;border-radius:5px;flex-shrink:0;border:1px dashed var(--border2);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--t3);cursor:pointer;transition:.15s}
-.hero-av-empty:hover{border-color:var(--gold2);color:var(--gold2)}
-.hero-name-inp{flex:1;min-width:0;background:transparent;border:none;outline:none;font-size:11px;font-weight:500;color:var(--t1)}
-.hero-name-inp::placeholder{color:var(--t3);font-size:10px}
+.lane-add{width:18px;height:18px;border:1px dashed var(--border2);border-radius:3px;background:transparent;color:var(--t3);cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;margin-left:auto;flex-shrink:0}
+.lane-add:hover{border-color:var(--gold2);color:var(--gold)}
+.hero-items{display:flex;flex-direction:column;gap:2px;padding:0 6px 4px}
+.hero-item{display:flex;align-items:center;gap:4px;padding:2px 0}
+/* Avatar */
+.av-box{width:30px;height:30px;border-radius:5px;flex-shrink:0;cursor:pointer;border:1px solid var(--border2);overflow:hidden;background:var(--bg3);display:flex;align-items:center;justify-content:center;transition:border-color .15s}
+.av-box:hover{border-color:var(--gold2)}
+.av-box img{width:100%;height:100%;object-fit:cover}
+.av-box .av-plus{font-size:14px;color:var(--t3)}
+.av-box:hover .av-plus{color:var(--gold2)}
+.hero-inp{flex:1;min-width:0;background:transparent;border:none;outline:none;font-size:11px;color:var(--t1)}
+.hero-inp::placeholder{color:var(--t3);font-size:10px}
 .cnt-wrap{display:flex;align-items:center;gap:2px;flex-shrink:0}
 .cnt-btn{width:16px;height:16px;border:1px solid var(--border2);border-radius:3px;background:var(--bg3);color:var(--t2);cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center;line-height:1}
 .cnt-btn:hover{background:var(--bg4);color:var(--t1)}
-.cnt{font-family:"Rajdhani",sans-serif;font-size:13px;font-weight:700;min-width:16px;text-align:center}
-.cnt.h{color:var(--red)}.cnt.m{color:var(--orange)}.cnt.l{color:var(--t2)}
-.lane-add-btn{width:18px;height:18px;border:1px dashed var(--border2);border-radius:3px;background:transparent;color:var(--t3);cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.lane-add-btn:hover{border-color:var(--gold2);color:var(--gold)}
-.lane-clear-btn{width:14px;height:14px;border:none;background:transparent;color:var(--t3);cursor:pointer;font-size:11px;flex-shrink:0}
-.lane-clear-btn:hover{color:var(--red)}
-
+.cnt-num{font-family:"Rajdhani",sans-serif;font-size:13px;font-weight:700;min-width:16px;text-align:center}
+.cnt-h{color:var(--red)}.cnt-m{color:var(--orange)}.cnt-l{color:var(--t2)}
+.rm-hero{width:13px;height:13px;border:none;background:transparent;color:var(--t3);cursor:pointer;font-size:11px;flex-shrink:0}
+.rm-hero:hover{color:var(--red)}
 /* STYLES */
 .style-wrap{display:flex;flex-wrap:wrap;gap:3px}
-.stag{padding:3px 7px;border-radius:20px;font-size:9px;font-weight:700;font-family:"Rajdhani",sans-serif;cursor:pointer;border:1px solid var(--border2);background:var(--bg3);color:var(--t3);transition:.12s;letter-spacing:.3px}
-.stag:hover{color:var(--t2);border-color:var(--t3)}
-.stag.on.r{background:#280d0d;border-color:#8a2020;color:#e07070}
-.stag.on.b{background:#0a1828;border-color:#1a4a88;color:#7090e0}
-.stag.on.g{background:#0a1e12;border-color:#1a5a30;color:#60c080}
-.stag.on.p{background:#140d28;border-color:#4a2888;color:#a070e0}
-.stag.on.o{background:#1e1208;border-color:#7a3a10;color:#d08040}
-
+.stag{padding:3px 7px;border-radius:20px;font-size:9px;font-weight:700;font-family:"Rajdhani",sans-serif;cursor:pointer;border:1px solid var(--border2);background:var(--bg3);color:var(--t3);transition:.12s;user-select:none}
+.stag.on-r{background:#280d0d;border-color:#8a2020;color:#e07070}
+.stag.on-b{background:#0a1828;border-color:#1a4a88;color:#7090e0}
+.stag.on-g{background:#0a1e12;border-color:#1a5a30;color:#60c080}
+.stag.on-p{background:#140d28;border-color:#4a2888;color:#a070e0}
+.stag.on-o{background:#1e1208;border-color:#7a3a10;color:#d08040}
 /* WB */
 .wb{background:var(--bg2);border:1px solid var(--border);border-radius:7px;overflow:hidden}
 .wb-row{padding:5px 8px;display:flex;align-items:flex-start;gap:6px;border-bottom:1px solid var(--border)}
 .wb-row:last-child{border-bottom:none}
 .wbl{font-family:"Rajdhani",sans-serif;font-size:8px;font-weight:700;letter-spacing:.8px;padding:2px 4px;border-radius:3px;flex-shrink:0;margin-top:2px}
-.wbl.w{background:#280d0d;color:#e07070}
-.wbl.c{background:#0a1828;color:#7090e0}
+.wbl-w{background:#280d0d;color:#e07070}
+.wbl-c{background:#0a1828;color:#7090e0}
 .wb-ta{flex:1;background:transparent;border:none;outline:none;font-size:10px;color:var(--t1);resize:none;min-height:28px;line-height:1.5;font-family:"Inter",sans-serif}
 .wb-ta::placeholder{color:var(--t3);font-size:9px}
-
-/* BAN / PICK */
 .bp-tags{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:4px}
 .ban-tag{display:flex;align-items:center;gap:3px;padding:2px 6px;border-radius:4px;font-size:10px;background:#220a0a;border:1px solid #5a1818;color:#e08080}
 .ban-tag button{background:none;border:none;cursor:pointer;color:#c04040;font-size:10px;padding:0;line-height:1}
@@ -112,80 +99,74 @@ body{font-family:"Inter",sans-serif;background:var(--bg0);color:var(--t1);min-he
 .bp-inp{flex:1;font-size:10px;padding:3px 6px;border:1px solid var(--border2);border-radius:5px;background:var(--bg2);color:var(--t1);outline:none}
 .bp-inp.bi{border-color:#5a1818;background:#180808;color:#e08080}
 .bp-inp.pi{border-color:#185a28;background:#081508;color:#70d090}
-.bp-add{padding:3px 7px;border-radius:5px;background:transparent;cursor:pointer;font-size:12px;line-height:1;border:1px solid;flex-shrink:0}
+.bp-add{padding:3px 7px;border-radius:5px;background:transparent;cursor:pointer;font-size:12px;border:1px solid;flex-shrink:0}
 .bp-add.b{border-color:#c03535;color:#c03535}
 .bp-add.p{border-color:#2e8a58;color:#2e8a58}
-
 .notes-ta{width:100%;font-size:10px;line-height:1.5;padding:6px 8px;border:1px solid var(--border);border-radius:6px;background:var(--bg2);color:var(--t1);resize:vertical;min-height:44px;outline:none;font-family:"Inter",sans-serif}
 .notes-ta::placeholder{color:var(--t3);font-size:9px}
-
 .card-foot{padding:6px 10px;background:var(--bg2);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;border-radius:0 0 10px 10px}
 .foot-info{font-family:"Rajdhani",sans-serif;font-size:10px;color:var(--t3)}
 .foot-info b{color:var(--gold)}
-
 /* AVATAR PICKER */
-.av-picker{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:1000;align-items:center;justify-content:center}
-.av-picker.show{display:flex}
-.av-inner{background:var(--bg2);border:1px solid var(--border2);border-radius:12px;padding:16px;width:380px;max-width:95vw;max-height:82vh;display:flex;flex-direction:column;gap:10px}
-.av-title{font-family:"Rajdhani",sans-serif;font-size:14px;font-weight:700;color:var(--gold)}
-.av-search{width:100%;padding:6px 9px;border:1px solid var(--border2);border-radius:6px;background:var(--bg3);color:var(--t1);font-size:11px;outline:none}
-.av-search::placeholder{color:var(--t3)}
-.av-grid{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;overflow-y:auto;max-height:280px}
-.av-opt{width:36px;height:36px;border-radius:5px;object-fit:cover;cursor:pointer;border:2px solid transparent;transition:.12s}
-.av-opt:hover{border-color:var(--gold2)}
-.av-opt.sel{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold2)}
+#av-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;align-items:center;justify-content:center}
+#av-overlay.show{display:flex}
+.av-box-inner{background:var(--bg2);border:1px solid var(--border2);border-radius:12px;padding:16px;width:380px;max-width:95vw;display:flex;flex-direction:column;gap:10px}
+.av-picker-title{font-family:"Rajdhani",sans-serif;font-size:14px;font-weight:700;color:var(--gold)}
+#av-search-inp{width:100%;padding:6px 9px;border:1px solid var(--border2);border-radius:6px;background:var(--bg3);color:var(--t1);font-size:11px;outline:none}
+#av-search-inp::placeholder{color:var(--t3)}
+#av-grid-inner{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;overflow-y:auto;max-height:260px}
+.av-img{width:36px;height:36px;border-radius:5px;object-fit:cover;cursor:pointer;border:2px solid transparent;transition:.12s}
+.av-img:hover{border-color:var(--gold2)}
+.av-img.av-sel{border-color:var(--gold)}
 .av-footer{display:flex;gap:7px}
-
-/* MODAL IMPORT */
-.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:500;align-items:center;justify-content:center}
-.modal-bg.show{display:flex}
-.modal-box{background:var(--bg2);border:1px solid var(--border2);border-radius:12px;padding:18px;width:300px;max-width:95vw}
+/* IMPORT MODAL */
+#imp-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:9998;align-items:center;justify-content:center}
+#imp-overlay.show{display:flex}
+.imp-box{background:var(--bg2);border:1px solid var(--border2);border-radius:12px;padding:18px;width:300px;max-width:95vw}
 </style>
 </head>
 <body>
 <div class="app">
-
-<div class="hdr">
-  <div class="logo-row">
-    <div class="logo">⚔</div>
-    <div>
-      <div class="app-title">SCOUTING BOOK</div>
-      <div class="app-sub">FPL · 5 Lane · Coach Edition</div>
+  <div class="hdr">
+    <div class="logo-row">
+      <div class="logo">⚔</div>
+      <div>
+        <div class="app-title">SCOUTING BOOK</div>
+        <div class="app-sub">FPL · 5 Lane · Coach Edition</div>
+      </div>
+    </div>
+    <div class="hdr-btns">
+      <button class="btn-ghost" id="btn-import">⬆ Import</button>
+      <button class="btn-gold" id="btn-add-team">+ Thêm đội</button>
     </div>
   </div>
-  <div class="hdr-btns">
-    <button class="btn-ghost" onclick="openImport()">⬆ Import</button>
-    <button class="btn-gold" onclick="addTeam()">+ Thêm đội</button>
-  </div>
-</div>
-
-<div class="stats-row" id="stats"></div>
-<div class="cols-grid" id="cols"></div>
+  <div class="stats-row" id="stats"></div>
+  <div class="cols-grid" id="cols"></div>
 </div>
 
 <!-- AVATAR PICKER -->
-<div class="av-picker" id="av-picker">
-  <div class="av-inner">
-    <div class="av-title">Chọn avatar tướng (FPL)</div>
-    <input class="av-search" placeholder="Lọc theo số thứ tự (0–127)..." oninput="filterAv(this.value)" id="av-search">
-    <div class="av-grid" id="av-grid"></div>
+<div id="av-overlay">
+  <div class="av-box-inner">
+    <div class="av-picker-title">Chọn avatar tướng (FPL · 128 tướng)</div>
+    <input id="av-search-inp" placeholder="Tìm theo số: 0, 1, 2...">
+    <div id="av-grid-inner"></div>
     <div class="av-footer">
-      <button onclick="clearAv()" style="padding:7px 10px;border:1px solid var(--border2);border-radius:6px;background:transparent;color:var(--t2);font-size:11px;cursor:pointer">Xoá ảnh</button>
-      <button onclick="closeAv()" style="flex:1;padding:7px;background:var(--gold);color:#07090f;border:none;border-radius:6px;font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;cursor:pointer">Xong</button>
+      <button id="av-clear-btn" style="padding:7px 10px;border:1px solid var(--border2);border-radius:6px;background:transparent;color:var(--t2);font-size:11px;cursor:pointer">Xoá ảnh</button>
+      <button id="av-done-btn" style="flex:1;padding:7px;background:var(--gold);color:#07090f;border:none;border-radius:6px;font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;cursor:pointer">Xong</button>
     </div>
   </div>
 </div>
 
 <!-- IMPORT -->
-<div class="modal-bg" id="imp-modal">
-  <div class="modal-box">
+<div id="imp-overlay">
+  <div class="imp-box">
     <div style="font-family:Rajdhani,sans-serif;font-size:15px;font-weight:700;color:var(--gold);margin-bottom:8px">Import tướng nhanh</div>
-    <div style="font-size:11px;color:var(--t2);margin-bottom:8px">Mỗi dòng: <b style="color:var(--gold)">Tên:số — Lane</b><br>VD: <span style="color:var(--gold)">Nakroth:9 — JUG</span><br>Hoặc chỉ: <span style="color:var(--gold)">Nakroth:9</span></div>
-    <select id="imp-team" style="width:100%;padding:6px;border:1px solid var(--border2);border-radius:5px;background:var(--bg3);color:var(--t1);font-size:12px;margin-bottom:7px;outline:none"></select>
+    <div style="font-size:11px;color:var(--t2);margin-bottom:8px">Mỗi dòng: <b style="color:var(--gold)">Tên:số — LANE</b><br>VD: <span style="color:var(--gold)">Nakroth:9 — JUG</span></div>
+    <select id="imp-team-sel" style="width:100%;padding:6px;border:1px solid var(--border2);border-radius:5px;background:var(--bg3);color:var(--t1);font-size:12px;margin-bottom:7px;outline:none"></select>
     <textarea id="imp-ta" style="width:100%;height:110px;padding:7px;border:1px solid var(--border2);border-radius:6px;background:var(--bg3);color:var(--t1);font-size:11px;resize:vertical;outline:none;font-family:Inter,sans-serif" placeholder="Nakroth:9 — JUG&#10;Loong:8 — DSL&#10;Tulen:7 — MID&#10;Violet:6 — ADC&#10;Zip:5 — SUP"></textarea>
     <div style="display:flex;gap:7px;margin-top:9px">
-      <button onclick="doImport()" style="flex:1;padding:8px;background:var(--gold);color:#07090f;border:none;border-radius:6px;font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;cursor:pointer">Import</button>
-      <button onclick="closeImport()" style="padding:8px 12px;border:1px solid var(--border2);border-radius:6px;background:transparent;color:var(--t2);font-size:12px;cursor:pointer">Huỷ</button>
+      <button id="imp-do-btn" style="flex:1;padding:8px;background:var(--gold);color:#07090f;border:none;border-radius:6px;font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;cursor:pointer">Import</button>
+      <button id="imp-cancel-btn" style="padding:8px 12px;border:1px solid var(--border2);border-radius:6px;background:transparent;color:var(--t2);font-size:12px;cursor:pointer">Huỷ</button>
     </div>
   </div>
 </div>
@@ -203,226 +184,318 @@ const STYLES = [
 ];
 const COLORS = ["#d4a843","#c03535","#2a6db5","#2e8a58","#6b4fa0","#c46020","#1e8888","#c03580","#888820","#206088"];
 
-// Default team structure: 5 lanes, each lane has {heroes:[{name,count,img}]}
-function defaultLanes(){
-  return {DSL:{h:[{n:"",c:1,img:""}]},JUG:{h:[{n:"",c:1,img:""}]},MID:{h:[{n:"",c:1,img:""}]},ADC:{h:[{n:"",c:1,img:""}]},SUP:{h:[{n:"",c:1,img:""}]}};
+function defLanes(){
+  const o={};
+  LANES.forEach(l=>o[l]={h:[{n:"",c:1,img:""}]});
+  return o;
 }
 
-let teams = JSON.parse(localStorage.getItem("sb7")||"null") || [
-  {id:1,name:"FW",color:"#d4a843",rating:5,lanes:defaultLanes(),styles:["Teamfight","Early game"],weakness:"",counter:"",bans:[],picks:[],notes:""},
-  {id:2,name:"ONE",color:"#c03535",rating:3,lanes:{
-    DSL:{h:[{n:"Toro",c:3,img:""}]},
-    JUG:{h:[{n:"FlowbornAD",c:3,img:""}]},
-    MID:{h:[{n:"Ignis",c:3,img:""}]},
-    ADC:{h:[{n:"Keera",c:3,img:""}]},
-    SUP:{h:[{n:"Richter",c:2,img:""}]},
-  },styles:["Early game","Dive"],weakness:"",counter:"",bans:[],picks:[],notes:""},
+let teams = JSON.parse(localStorage.getItem("sb8")||"null") || [
+  {id:1,name:"FW",color:"#d4a843",rating:5,lanes:defLanes(),styles:["Teamfight","Early game"],weakness:"",counter:"",bans:[],picks:[],notes:""},
 ];
-let nid = Math.max(...teams.map(t=>t.id),0)+1;
-
-// Migrate old format if needed
-teams = teams.map(t => {
-  if(!t.lanes) t.lanes = defaultLanes();
-  LANES.forEach(lane => { if(!t.lanes[lane]) t.lanes[lane]={h:[{n:"",c:1,img:""}]}; });
+// migrate
+teams = teams.map(t=>{
+  if(!t.lanes) t.lanes=defLanes();
+  LANES.forEach(l=>{if(!t.lanes[l])t.lanes[l]={h:[{n:"",c:1,img:""}]};});
   return t;
 });
+let nid = Math.max(...teams.map(t=>t.id),0)+1;
 
-function save(){localStorage.setItem("sb7",JSON.stringify(teams))}
-function cc(n){return n>=7?"h":n>=4?"m":"l"}
+function save(){localStorage.setItem("sb8",JSON.stringify(teams))}
+function cc(n){return n>=7?"cnt-h":n>=4?"cnt-m":"cnt-l"}
+function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
 
-// AVATAR PICKER
-let pickerCb = null;
-function openAv(cb, currentImg){
-  pickerCb = cb;
-  filterAv("", currentImg);
-  document.getElementById("av-search").value="";
-  document.getElementById("av-picker").classList.add("show");
+// ===== AVATAR PICKER =====
+let avCb = null, avCurrent = "";
+
+function openAvPicker(teamId, lane, hi){
+  avCurrent = (teams.find(t=>t.id===teamId)?.lanes[lane]?.h[hi]?.img)||"";
+  avCb = function(key){
+    const t=teams.find(t=>t.id===teamId);
+    if(t&&t.lanes[lane]&&t.lanes[lane].h[hi]!==undefined){
+      t.lanes[lane].h[hi].img = key;
+      save(); render();
+    }
+  };
+  buildAvGrid("");
+  document.getElementById("av-search-inp").value="";
+  document.getElementById("av-overlay").classList.add("show");
 }
-function filterAv(q, selImg){
-  const current = selImg !== undefined ? selImg : null;
-  const grid = document.getElementById("av-grid");
-  const keys = Object.keys(IMGS).filter(k => !q || k.includes(q));
-  grid.innerHTML = keys.map(k=>`<img class="av-opt${(current||"")===k?" sel":""}" src="${IMGS[k]}" data-k="${k}" onclick="pickAv('${k}')" title="#${k}">`).join("");
+
+function buildAvGrid(q){
+  const grid = document.getElementById("av-grid-inner");
+  const keys = Object.keys(IMGS).filter(k=> !q || k.includes(q));
+  grid.innerHTML = keys.map(k=>
+    `<img class="av-img${avCurrent===k?" av-sel":""}" src="${IMGS[k]}" data-k="${k}" title="#${k}">`
+  ).join("");
+  grid.querySelectorAll(".av-img").forEach(el=>{
+    el.addEventListener("click", function(){
+      avCurrent = this.dataset.k;
+      grid.querySelectorAll(".av-img").forEach(x=>x.classList.remove("av-sel"));
+      this.classList.add("av-sel");
+      if(avCb){ avCb(avCurrent); }
+    });
+  });
 }
-function pickAv(k){
-  document.querySelectorAll(".av-opt").forEach(el=>el.classList.toggle("sel",el.dataset.k===k));
-  if(pickerCb) pickerCb(k);
+
+document.getElementById("av-search-inp").addEventListener("input", function(){
+  buildAvGrid(this.value.trim());
+});
+document.getElementById("av-done-btn").addEventListener("click", ()=>{
+  document.getElementById("av-overlay").classList.remove("show");
+});
+document.getElementById("av-clear-btn").addEventListener("click", ()=>{
+  if(avCb) avCb("");
+  document.getElementById("av-overlay").classList.remove("show");
+});
+document.getElementById("av-overlay").addEventListener("click", function(e){
+  if(e.target===this) this.classList.remove("show");
+});
+
+// ===== TEAM OPS =====
+function addTeam(){
+  const color=COLORS[teams.length%COLORS.length];
+  teams.push({id:nid++,name:"Đội mới",color,rating:0,lanes:defLanes(),styles:[],weakness:"",counter:"",bans:[],picks:[],notes:""});
+  save(); render();
+  setTimeout(()=>{
+    const inps=document.querySelectorAll(".name-inp");
+    inps[inps.length-1]?.select();
+  },60);
+}
+function delTeam(id){if(!confirm("Xoá đội này?"))return;teams=teams.filter(t=>t.id!==id);save();render();}
+function setRating(id,v){teams.find(t=>t.id===id).rating=v;save();render();}
+
+function addHero(teamId, lane){
+  const t=teams.find(t=>t.id===teamId);
+  t.lanes[lane].h.push({n:"",c:1,img:""});
   save(); render();
 }
-function clearAv(){if(pickerCb)pickerCb("");save();render();closeAv();}
-function closeAv(){document.getElementById("av-picker").classList.remove("show")}
-document.getElementById("av-picker").addEventListener("click",function(e){if(e.target===this)closeAv()});
-
-// LANE HERO OPERATIONS
-function setHeroImg(teamId, lane, hi, imgKey){
+function removeHero(teamId, lane, hi){
   const t=teams.find(t=>t.id===teamId);
-  if(t&&t.lanes[lane]&&t.lanes[lane].h[hi]!==undefined) t.lanes[lane].h[hi].img=imgKey;
-}
-function setHeroName(teamId, lane, hi, val){
-  const t=teams.find(t=>t.id===teamId);
-  if(t&&t.lanes[lane]&&t.lanes[lane].h[hi]!==undefined) t.lanes[lane].h[hi].n=val;
-  save();
-}
-function adjHeroCnt(teamId, lane, hi, d){
-  const t=teams.find(t=>t.id===teamId);
-  if(!t||!t.lanes[lane]||!t.lanes[lane].h[hi])return;
-  t.lanes[lane].h[hi].c=Math.max(0,t.lanes[lane].h[hi].c+d);
-  save();render();
-}
-function addHeroToLane(teamId, lane){
-  const t=teams.find(t=>t.id===teamId);
-  if(!t||!t.lanes[lane])return;
-  t.lanes[lane].h.push({n:"",c:1,img:""});
-  save();render();
-}
-function removeHeroFromLane(teamId, lane, hi){
-  const t=teams.find(t=>t.id===teamId);
-  if(!t||!t.lanes[lane])return;
   t.lanes[lane].h.splice(hi,1);
-  if(t.lanes[lane].h.length===0) t.lanes[lane].h=[{n:"",c:1,img:""}];
-  save();render();
+  if(!t.lanes[lane].h.length) t.lanes[lane].h=[{n:"",c:1,img:""}];
+  save(); render();
+}
+function adjCnt(teamId, lane, hi, d){
+  const t=teams.find(t=>t.id===teamId);
+  const h=t.lanes[lane].h[hi];
+  if(!h)return;
+  h.c=Math.max(0,h.c+d);
+  if(h.c===0){t.lanes[lane].h.splice(hi,1);if(!t.lanes[lane].h.length)t.lanes[lane].h=[{n:"",c:1,img:""}];}
+  save(); render();
 }
 
 function togStyle(id,s){
   const t=teams.find(t=>t.id===id);
-  const i=t.styles.indexOf(s);if(i>=0)t.styles.splice(i,1);else t.styles.push(s);
-  save();render();
+  const i=t.styles.indexOf(s);
+  if(i>=0)t.styles.splice(i,1);else t.styles.push(s);
+  save(); render();
 }
-function addBan(id){const i=document.getElementById("bi-"+id);if(!i)return;const v=i.value.trim();if(!v)return;const t=teams.find(t=>t.id===id);if(!t.bans.includes(v)){t.bans.push(v);save();render();}i.value="";}
-function rmBan(id,i){teams.find(t=>t.id===id).bans.splice(i,1);save();render()}
-function addPick(id){const i=document.getElementById("pi-"+id);if(!i)return;const v=i.value.trim();if(!v)return;const t=teams.find(t=>t.id===id);if(!t.picks.includes(v)){t.picks.push(v);save();render();}i.value="";}
-function rmPick(id,i){teams.find(t=>t.id===id).picks.splice(i,1);save();render()}
-function addTeam(){
-  const color=COLORS[teams.length%COLORS.length];
-  teams.push({id:nid++,name:"Đội mới",color,rating:0,lanes:defaultLanes(),styles:[],weakness:"",counter:"",bans:[],picks:[],notes:""});
-  save();render();
-  setTimeout(()=>{document.querySelectorAll(".name-inp")[teams.length-1]?.select();},60);
+function addBan(id){
+  const inp=document.getElementById("bi-"+id);
+  const v=inp.value.trim();if(!v)return;
+  const t=teams.find(t=>t.id===id);
+  if(!t.bans.includes(v)){t.bans.push(v);save();render();}
+  inp.value="";
 }
-function delTeam(id){if(!confirm("Xoá đội này?"))return;teams=teams.filter(t=>t.id!==id);save();render()}
-function setRating(id,v){teams.find(t=>t.id===id).rating=v;save();render()}
+function rmBan(id,i){teams.find(t=>t.id===id).bans.splice(i,1);save();render();}
+function addPick(id){
+  const inp=document.getElementById("pi-"+id);
+  const v=inp.value.trim();if(!v)return;
+  const t=teams.find(t=>t.id===id);
+  if(!t.picks.includes(v)){t.picks.push(v);save();render();}
+  inp.value="";
+}
+function rmPick(id,i){teams.find(t=>t.id===id).picks.splice(i,1);save();render();}
 
-function openImport(){
-  document.getElementById("imp-team").innerHTML=teams.map(t=>`<option value="${t.id}">${t.name}</option>`).join("");
-  document.getElementById("imp-modal").classList.add("show");
-}
-function closeImport(){document.getElementById("imp-modal").classList.remove("show")}
-function doImport(){
-  const tid=parseInt(document.getElementById("imp-team").value);
+// ===== IMPORT =====
+document.getElementById("btn-import").addEventListener("click",()=>{
+  document.getElementById("imp-team-sel").innerHTML=teams.map(t=>`<option value="${t.id}">${t.name}</option>`).join("");
+  document.getElementById("imp-overlay").classList.add("show");
+});
+document.getElementById("imp-cancel-btn").addEventListener("click",()=>{document.getElementById("imp-overlay").classList.remove("show");});
+document.getElementById("imp-overlay").addEventListener("click",function(e){if(e.target===this)this.classList.remove("show");});
+document.getElementById("imp-do-btn").addEventListener("click",()=>{
+  const tid=parseInt(document.getElementById("imp-team-sel").value);
   const ta=document.getElementById("imp-ta").value;
   const t=teams.find(x=>x.id===tid);if(!t)return;
-  ta.split(/[\n]+/).map(s=>s.trim()).filter(Boolean).forEach(p=>{
-    // Format: Name:count — LANE  or  Name:count  or  Name — LANE
-    const laneMatch = p.match(/—\s*(DSL|JUG|MID|ADC|SUP)/i);
-    const lane = laneMatch ? laneMatch[1].toUpperCase() : "DSL";
-    const core = p.replace(/—.*$/,"").trim();
-    const m = core.match(/^(.+?):(\d+)$/);
-    const name = m ? m[1].trim() : core.trim();
-    const cnt = m ? parseInt(m[2]) : 1;
+  ta.split(/
+/).map(s=>s.trim()).filter(Boolean).forEach(p=>{
+    const lm=p.match(/[—-]\s*(DSL|JUG|MID|ADC|SUP)/i);
+    const lane=lm?lm[1].toUpperCase():"DSL";
+    const core=p.replace(/[—-].*$/,"").trim();
+    const m=core.match(/^(.+?):(\d+)$/);
+    const name=m?m[1].trim():core;
+    const cnt=m?parseInt(m[2]):1;
     if(!name||!t.lanes[lane])return;
-    const ex = t.lanes[lane].h.find(h=>h.n===name);
-    if(ex) ex.c+=cnt;
-    else { if(t.lanes[lane].h.length===1&&!t.lanes[lane].h[0].n) t.lanes[lane].h[0]={n:name,c:cnt,img:""}; else t.lanes[lane].h.push({n:name,c:cnt,img:""}); }
+    const ex=t.lanes[lane].h.find(h=>h.n===name);
+    if(ex)ex.c+=cnt;
+    else if(t.lanes[lane].h.length===1&&!t.lanes[lane].h[0].n) t.lanes[lane].h[0]={n:name,c:cnt,img:""};
+    else t.lanes[lane].h.push({n:name,c:cnt,img:""});
   });
-  save();render();closeImport();document.getElementById("imp-ta").value="";
-}
-document.getElementById("imp-modal").addEventListener("click",function(e){if(e.target===this)closeImport()});
+  save();render();
+  document.getElementById("imp-overlay").classList.remove("show");
+  document.getElementById("imp-ta").value="";
+});
+document.getElementById("btn-add-team").addEventListener("click", addTeam);
 
-function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
-
+// ===== RENDER =====
 function renderStats(){
-  const total=teams.reduce((s,t)=>s+LANES.reduce((a,ln)=>a+t.lanes[ln].h.reduce((x,h)=>x+h.c,0),0),0);
+  const total=teams.reduce((s,t)=>s+LANES.reduce((a,ln)=>a+t.lanes[ln].h.reduce((x,h)=>x+(h.n?h.c:0),0),0),0);
   const danger=teams.filter(t=>t.rating>=4).length;
-  document.getElementById("stats").innerHTML=`
-    <div class="sc">Đội: <b>${teams.length}</b></div>
-    <div class="sc">Tổng lần dùng: <b>${total}</b></div>
-    <div class="sc danger">4★+: <b>${danger}</b></div>`;
+  document.getElementById("stats").innerHTML=
+    `<div class="sc">Đội: <b>${teams.length}</b></div>`+
+    `<div class="sc">Tổng lần dùng: <b>${total}</b></div>`+
+    `<div class="sc danger">4★+: <b>${danger}</b></div>`;
 }
 
 function render(){
   const cols=document.getElementById("cols");
-  if(!teams.length){cols.innerHTML="<p style=\"color:var(--t3);padding:2rem;font-size:12px\">Chưa có đội</p>";renderStats();return;}
   cols.innerHTML=teams.map(t=>{
-    const totalUses=LANES.reduce((a,ln)=>a+t.lanes[ln].h.reduce((x,h)=>x+h.c,0),0);
-    const totalHeroes=LANES.reduce((a,ln)=>a+t.lanes[ln].h.filter(h=>h.n).length,0);
+    const totalUses=LANES.reduce((a,ln)=>a+t.lanes[ln].h.reduce((x,h)=>x+(h.n?h.c:0),0),0);
+    const totalH=LANES.reduce((a,ln)=>a+t.lanes[ln].h.filter(h=>h.n).length,0);
 
-    const lanesHtml = LANES.map(lane=>{
-      const heroes = t.lanes[lane].h;
-      const heroRows = heroes.map((h,hi)=>{
-        const imgSrc = h.img && IMGS[h.img] ? IMGS[h.img] : "";
-        const avEl = imgSrc
-          ? `<img class="hero-av" src="${imgSrc}" onclick="openAv(k=>{setHeroImg(${t.id},'${lane}',${hi},k);save();render();},${JSON.stringify(h.img||"")})" title="Đổi avatar">`
-          : `<div class="hero-av-empty" onclick="openAv(k=>{setHeroImg(${t.id},'${lane}',${hi},k);save();render();},${JSON.stringify(h.img||"")})">+</div>`;
-        return `<div style="display:flex;align-items:center;gap:4px;margin-top:${hi>0?'3px':'0'}">
-          ${avEl}
-          <input class="hero-name-inp" value="${esc(h.n)}" placeholder="Tên tướng..." oninput="setHeroName(${t.id},'${lane}',${hi},this.value)">
+    const lanesHtml=LANES.map(lane=>{
+      const heroRows=t.lanes[lane].h.map((h,hi)=>{
+        const imgSrc=h.img&&IMGS[h.img]?IMGS[h.img]:"";
+        const avInner=imgSrc?`<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover">`:`<span class="av-plus">+</span>`;
+        return `<div class="hero-item">
+          <div class="av-box" data-tid="${t.id}" data-lane="${lane}" data-hi="${hi}">${avInner}</div>
+          <input class="hero-inp" value="${esc(h.n)}" placeholder="Tên tướng..." data-tid="${t.id}" data-lane="${lane}" data-hi="${hi}">
           <div class="cnt-wrap">
-            <button class="cnt-btn" onclick="adjHeroCnt(${t.id},'${lane}',${hi},-1)">−</button>
-            <span class="cnt ${cc(h.c)}">${h.c}</span>
-            <button class="cnt-btn" onclick="adjHeroCnt(${t.id},'${lane}',${hi},1)">+</button>
+            <button class="cnt-btn" data-action="dec" data-tid="${t.id}" data-lane="${lane}" data-hi="${hi}">−</button>
+            <span class="cnt-num ${cc(h.c)}">${h.c}</span>
+            <button class="cnt-btn" data-action="inc" data-tid="${t.id}" data-lane="${lane}" data-hi="${hi}">+</button>
           </div>
-          <button class="lane-clear-btn" onclick="removeHeroFromLane(${t.id},'${lane}',${hi})">×</button>
+          <button class="rm-hero" data-action="rm" data-tid="${t.id}" data-lane="${lane}" data-hi="${hi}">×</button>
         </div>`;
       }).join("");
-
       return `<div class="lane-row">
-        <div class="lane-label ${LANE_CSS[lane]}">${lane}</div>
-        <div style="flex:1;min-width:0">
-          ${heroRows}
+        <div class="lane-hdr">
+          <div class="lane-lbl ${LANE_CSS[lane]}">${lane}</div>
+          <button class="lane-add" data-action="addh" data-tid="${t.id}" data-lane="${lane}">+</button>
         </div>
-        <button class="lane-add-btn" onclick="addHeroToLane(${t.id},'${lane}')" title="Thêm tướng lane này">+</button>
+        <div class="hero-items">${heroRows}</div>
       </div>`;
     }).join("");
 
-    return `
-<div class="card">
-  <div class="card-hdr">
-    <div class="team-ico" style="background:${t.color}22;color:${t.color};border:1px solid ${t.color}44">${t.name.charAt(0)}</div>
-    <input class="name-inp" style="color:${t.color}" value="${esc(t.name)}" placeholder="Tên đội" oninput="teams.find(x=>x.id==${t.id}).name=this.value;save();renderStats()">
-    <div class="stars">${[1,2,3,4,5].map(s=>`<span class="star${t.rating>=s?" on":""}" onclick="setRating(${t.id},${s})">★</span>`).join("")}</div>
-    <button class="del-btn" onclick="delTeam(${t.id})">✕</button>
-  </div>
-  <div class="body">
-    <div>
-      <div class="slabel">5 Lane · Tướng hay dùng</div>
-      <div class="lanes">${lanesHtml}</div>
-    </div>
-    <div class="div"></div>
-    <div>
-      <div class="slabel">Lối đánh</div>
-      <div class="style-wrap">${STYLES.map(s=>`<span class="stag${t.styles.includes(s.l)?" on "+s.c:""}" onclick="togStyle(${t.id},'${s.l}')">${s.l}</span>`).join("")}</div>
-    </div>
-    <div class="div"></div>
-    <div>
-      <div class="slabel">Điểm yếu & Cách counter</div>
-      <div class="wb">
-        <div class="wb-row"><span class="wbl w">YẾU</span><textarea class="wb-ta" placeholder="Điểm yếu..." oninput="teams.find(x=>x.id==${t.id}).weakness=this.value;save()">${esc(t.weakness)}</textarea></div>
-        <div class="wb-row"><span class="wbl c">COUNTER</span><textarea class="wb-ta" placeholder="Mình nên draft/chơi thế nào..." oninput="teams.find(x=>x.id==${t.id}).counter=this.value;save()">${esc(t.counter)}</textarea></div>
+    const stylesHtml=STYLES.map(s=>{
+      const on=t.styles.includes(s.l);
+      return `<span class="stag${on?" on-"+s.c:""}" data-action="style" data-tid="${t.id}" data-style="${s.l}">${s.l}</span>`;
+    }).join("");
+
+    return `<div class="card" data-cid="${t.id}">
+      <div class="card-hdr">
+        <div class="team-ico" style="background:${t.color}22;color:${t.color};border:1px solid ${t.color}44">${t.name.charAt(0)}</div>
+        <input class="name-inp" style="color:${t.color}" value="${esc(t.name)}" data-tid="${t.id}" placeholder="Tên đội">
+        <div class="stars">${[1,2,3,4,5].map(s=>`<span class="star${t.rating>=s?" on":""}" data-action="star" data-tid="${t.id}" data-v="${s}">★</span>`).join("")}</div>
+        <button class="del-btn" data-action="del" data-tid="${t.id}">✕</button>
       </div>
-    </div>
-    <div class="div"></div>
-    <div>
-      <div class="slabel">Cần ban</div>
-      <div class="bp-tags">${t.bans.map((b,i)=>`<span class="ban-tag">${esc(b)}<button onclick="rmBan(${t.id},${i})">×</button></span>`).join("")}</div>
-      <div class="bp-row"><input id="bi-${t.id}" class="bp-inp bi" placeholder="Tướng phải ban..." onkeydown="if(event.key==='Enter')addBan(${t.id})"><button class="bp-add b" onclick="addBan(${t.id})">+</button></div>
-    </div>
-    <div>
-      <div class="slabel">Ưu tiên pick</div>
-      <div class="bp-tags">${t.picks.map((p,i)=>`<span class="pick-tag">${esc(p)}<button onclick="rmPick(${t.id},${i})">×</button></span>`).join("")}</div>
-      <div class="bp-row"><input id="pi-${t.id}" class="bp-inp pi" placeholder="Tướng muốn pick..." onkeydown="if(event.key==='Enter')addPick(${t.id})"><button class="bp-add p" onclick="addPick(${t.id})">+</button></div>
-    </div>
-    <div class="div"></div>
-    <div>
-      <div class="slabel">Ghi chú</div>
-      <textarea class="notes-ta" placeholder="Chiến thuật, thói quen, lịch sử..." oninput="teams.find(x=>x.id==${t.id}).notes=this.value;save()">${esc(t.notes)}</textarea>
-    </div>
-  </div>
-  <div class="card-foot">
-    <span class="foot-info">Tổng: <b>${totalUses}</b> lần · <b>${totalHeroes}</b> tướng</span>
-  </div>
-</div>`;
+      <div class="body">
+        <div>
+          <div class="slabel">5 Lane · Tướng hay dùng</div>
+          <div class="lanes">${lanesHtml}</div>
+        </div>
+        <div class="divider"></div>
+        <div>
+          <div class="slabel">Lối đánh</div>
+          <div class="style-wrap">${stylesHtml}</div>
+        </div>
+        <div class="divider"></div>
+        <div>
+          <div class="slabel">Điểm yếu & Cách counter</div>
+          <div class="wb">
+            <div class="wb-row"><span class="wbl wbl-w">YẾU</span><textarea class="wb-ta" data-field="weakness" data-tid="${t.id}" placeholder="Điểm yếu...">${esc(t.weakness)}</textarea></div>
+            <div class="wb-row"><span class="wbl wbl-c">COUNTER</span><textarea class="wb-ta" data-field="counter" data-tid="${t.id}" placeholder="Mình nên draft/chơi thế nào...">${esc(t.counter)}</textarea></div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div>
+          <div class="slabel">Cần ban</div>
+          <div class="bp-tags" id="bans-${t.id}">${t.bans.map((b,i)=>`<span class="ban-tag">${esc(b)}<button data-action="rmbан" data-tid="${t.id}" data-i="${i}">×</button></span>`).join("")}</div>
+          <div class="bp-row"><input id="bi-${t.id}" class="bp-inp bi" placeholder="Tướng phải ban..."><button class="bp-add b" data-action="addban" data-tid="${t.id}">+</button></div>
+        </div>
+        <div>
+          <div class="slabel">Ưu tiên pick</div>
+          <div class="bp-tags" id="picks-${t.id}">${t.picks.map((p,i)=>`<span class="pick-tag">${esc(p)}<button data-action="rmpick" data-tid="${t.id}" data-i="${i}">×</button></span>`).join("")}</div>
+          <div class="bp-row"><input id="pi-${t.id}" class="bp-inp pi" placeholder="Tướng muốn pick..."><button class="bp-add p" data-action="addpick" data-tid="${t.id}">+</button></div>
+        </div>
+        <div class="divider"></div>
+        <div>
+          <div class="slabel">Ghi chú</div>
+          <textarea class="notes-ta" data-field="notes" data-tid="${t.id}" placeholder="Chiến thuật, thói quen, lịch sử...">${esc(t.notes)}</textarea>
+        </div>
+      </div>
+      <div class="card-foot">
+        <span class="foot-info">Tổng: <b>${totalUses}</b> lần · <b>${totalH}</b> tướng</span>
+      </div>
+    </div>`;
   }).join("");
+
+  // Event delegation — tất cả events qua 1 listener, không inline
+  cols.addEventListener("click", handleColsClick, {once:true});
+  cols.addEventListener("input", handleColsInput, {once:true});
+  cols.addEventListener("keydown", handleColsKey, {once:true});
+
+  // Re-attach properly
+  attachEvents();
   renderStats();
 }
+
+function attachEvents(){
+  const cols = document.getElementById("cols");
+  // Remove old listeners by cloning
+  const newCols = cols.cloneNode(true);
+  cols.parentNode.replaceChild(newCols, cols);
+
+  newCols.addEventListener("click", function(e){
+    const el = e.target.closest("[data-action]");
+    if(!el) return;
+    const a=el.dataset.action, tid=parseInt(el.dataset.tid);
+    if(a==="del") delTeam(tid);
+    else if(a==="star") setRating(tid, parseInt(el.dataset.v));
+    else if(a==="addh") addHero(tid, el.dataset.lane);
+    else if(a==="inc") adjCnt(tid, el.dataset.lane, parseInt(el.dataset.hi), 1);
+    else if(a==="dec") adjCnt(tid, el.dataset.lane, parseInt(el.dataset.hi), -1);
+    else if(a==="rm") removeHero(tid, el.dataset.lane, parseInt(el.dataset.hi));
+    else if(a==="style") togStyle(tid, el.dataset.style);
+    else if(a==="addban") addBan(tid);
+    else if(a==="addpick") addPick(tid);
+    else if(a==="rmbан") rmBan(tid, parseInt(el.dataset.i));
+    else if(a==="rmpick") rmPick(tid, parseInt(el.dataset.i));
+  });
+
+  newCols.addEventListener("click", function(e){
+    const av = e.target.closest(".av-box");
+    if(!av) return;
+    openAvPicker(parseInt(av.dataset.tid), av.dataset.lane, parseInt(av.dataset.hi));
+  });
+
+  newCols.addEventListener("input", function(e){
+    const el=e.target;
+    const tid=parseInt(el.dataset.tid);
+    if(el.classList.contains("name-inp")){
+      teams.find(t=>t.id===tid).name=el.value; save(); renderStats();
+    } else if(el.classList.contains("hero-inp")){
+      const t=teams.find(t=>t.id===tid);
+      t.lanes[el.dataset.lane].h[parseInt(el.dataset.hi)].n=el.value; save();
+    } else if(el.classList.contains("wb-ta")||el.classList.contains("notes-ta")){
+      teams.find(t=>t.id===tid)[el.dataset.field]=el.value; save();
+    }
+  });
+
+  newCols.addEventListener("keydown", function(e){
+    if(e.key!=="Enter") return;
+    const el=e.target;
+    const tid=parseInt(el.dataset.tid);
+    if(el.id&&el.id.startsWith("bi-")) addBan(tid);
+    else if(el.id&&el.id.startsWith("pi-")) addPick(tid);
+  });
+}
+
+function handleColsClick(){}
+function handleColsInput(){}
+function handleColsKey(){}
 
 render();
 </script>
