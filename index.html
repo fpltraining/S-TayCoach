@@ -322,8 +322,7 @@ document.getElementById("imp-do-btn").addEventListener("click",function(){
   var tid=parseInt(document.getElementById("imp-team-sel").value);
   var ta=document.getElementById("imp-ta").value;
   var t=teams.filter(function(x){return x.id===tid;})[0]; if(!t)return;
-  var lines=ta.split("
-");
+  var lines=ta.split("\n");
   for(var i=0;i<lines.length;i++){
     var p=lines[i].trim(); if(!p)continue;
     var seg=p.split(" ");
